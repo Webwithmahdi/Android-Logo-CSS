@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #052734;
+}
+html {
+  font-size: 62.5%;
+}
+.content {
+  margin: auto;
+}
+.android-logo {
+  width: 600px;
+  height: 700px;
+  position: relative;
+}
+.tentacle {
+  position: absolute;
+  width: 10px;
+  height: 60px;
+  background-color: #80c340;
+  left: 38%;
+  transform: rotateZ(-40deg);
+  top: 3%;
+  border-radius: 10px;
+}
+.tentacle:nth-child(2) {
+  left: unset;
+  right: 38%;
+  transform: rotateZ(40deg);
+}
+.head {
+  position: absolute;
+  width: 280px;
+  height: 140px;
+  border-radius: 140px 140px 0 0;
+  background-color: #80c340;
+  left: 50%;
+  top: 8%;
+  transform: translateX(-50%);
+}
+.head::after,
+.head::before {
+  content: "";
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: white;
+  top: 35%;
+  left: 22%;
+}
+.head::before {
+  left: unset;
+  right: 22%;
+}
+.body {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 250px;
+  background-color: #80c340;
+  top: 31%;
+  border-radius: 0 0 15px 15px;
+}
+.arm1,
+.arm2 {
+  position: absolute;
+  width: 55px;
+  height: 200px;
+  background-color: #80c340;
+  border-radius: 30px;
+  left: 14%;
+  top: 30%;
+  transform-origin: left;
+  animation: arm1 1s linear alternate infinite;
+}
+.arm2 {
+  background-color: #80c340;
+  left: unset;
+  right: 14%;
+  transform-origin: right;
+  animation: arm2 1s linear alternate infinite;
+}
+.leg1,
+.leg2 {
+  position: absolute;
+  width: 55px;
+  height: 200px;
+  background-color: #80c340;
+  border-radius: 30px;
+  bottom: 17%;
+  right: 35%;
+}
+.leg2 {
+  right: unset;
+  left: 35%;
+}
+
+@keyframes arm1 {
+  100% {
+    transform: rotateZ(10deg);
+  }
+}
+@keyframes arm2 {
+  100% {
+    transform: rotateZ(-10deg);
+  }
+}
